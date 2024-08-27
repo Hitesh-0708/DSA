@@ -154,7 +154,6 @@ void main()
             printf("wrong option selected..:\n");
             return;
 
-         //dskjdkjsk
         }
     }
 }
