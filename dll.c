@@ -153,10 +153,6 @@ void main()
         default:
             printf("wrong option selected..:\n");
             return;
-//kdjfjksjkjksjv
-
-flkdjkkkf
-fklkd
         }
     }
 }
