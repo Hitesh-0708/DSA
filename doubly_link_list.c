@@ -123,13 +123,59 @@ void add_in_mid(struct dll **head)
         }
     }
 }
+void del_first(struct dll **head)
+{
+    struct dll *del=*head;
+    if(del==0)
+    {
+        printf("no nodes are present..:\n");
+        return;
+    }
+    else if(del->next==0)
+    {
+        free(del);
+        *head=0;
+    }
+    else
+    {
+        *head=del->next;
+        del->next->prev=NULL;
+        free(del);
+    }
+}
+
+void del_last(struct dll **head)
+{
+    struct dll *del=*head;
+    if(del==0)
+    {
+        printf("No nodes are present \n");
+        return;
+    }
+    else if(del->next==0)
+    {
+        free(del);
+        *head=0;
+    }
+    else
+    {
+        while(del->next)
+        {
+            del=del->next;
+        }
+        del->prev->next=0;
+        free(del);
+    }
+
+}
 void main()
 {
     struct dll *head = 0;
     int op = 0;
     while (1)
     {
-        printf("1)add at begin\t2)print\t3)add at end\t4)add in middle\n");
+        printf("1)add at begin\t2)print\t3)add at end\t4)add in middle\t");
+        printf("5)del_f_node\t6)del_l_node\n");
         printf("chose one option..:\n");
         scanf("%d", &op);
 
@@ -150,12 +196,17 @@ void main()
             add_in_mid(&head);
             break;
 
+        case 5:
+            del_first(&head);
+            break;
+
+        case 6:
+            del_last(&head);
+            break;
+
         default:
             printf("wrong option selected..:\n");
             return;
-            {
-
-            }
         }
     }
 }
