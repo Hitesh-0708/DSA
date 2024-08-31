@@ -45,7 +45,7 @@ void pop(void)
             printf("First add something in queue..\n");
             return;
         }
-            for(int i=0;i<=top;i++)
+            for(int i=top;i>=0;i--)
             {
                 printf("%d\t",queue[i]);
             }
@@ -56,7 +56,7 @@ void main()
     int op;
     while(1)
     {
-        printf("1)push\t2)pop\t3)display\n");
+        printf("\n1)push\t2)pop\t3)display\n");
         printf("Chose one option..:\n");
         scanf("%d",&op);
 

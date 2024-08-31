@@ -33,7 +33,7 @@ void pop(void)
 
 void display(void)
 {
-    for(int i=0;i<=top;i++)
+    for(int i=top;i>=0;i--)
     {
         printf("%d\t",stack[i]);
     }
@@ -45,7 +45,7 @@ void main()
     int op=0;
     while(1)
     {
-        printf("1)push \t2)pop\t3)dispay\n");
+        printf("\n1)push \t2)pop\t3)dispay\n");
         printf("Chose one oprtion..:\n");
         scanf("%d",&op);
         switch(op)
