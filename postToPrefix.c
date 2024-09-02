@@ -121,8 +121,6 @@ int main()
 {
     printf("Enter the infix exp..:\n");
     scanf("%[^\n]", infix);
-    // char buf[100] = "1+2*3(1+2)";
-    //  infix = in;
     intoPostExp(infix);
     print();
     return 0;
